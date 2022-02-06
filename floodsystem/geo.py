@@ -6,7 +6,6 @@ geographical data.
 
 """
 
-from math import dist
 from os import stat
 from .utils import sorted_by_key  # noqa
 from .station import MonitoringStation
@@ -39,9 +38,24 @@ def stations_by_distance(stations, p):
         #lyon = (45.7597, 4.8422) # (lat, lon)
         #print(haversine(station.coord,p))
 
-#task 1D
+#task 1C
+def stations_within_radius(stations, centre, r):
+    list_of_stations = []
+    for station in stations:
+        distance = haversine(centre, station.coord)
+        if distance <= r:
+            list_of_stations.append(station.name)
+        list_of_stations = sorted_by_key(list_of_stations, 0)
+    return list_of_stations
 
+#task 1D
 #part 1
+def rivers_with_station(stations):
+    rivers_with_station = set()
+    for station in stations:
+        rivers_with_station.add(station.river)
+    rivers_with_station = sorted_by_key(rivers_with_station, 0)
+    return rivers_with_station
 
 #part2
 def stations_by_river(stations):
@@ -55,11 +69,12 @@ def stations_by_river(stations):
         else:
             station_by_river[station.river]=[station.name]           
     return station_by_river
+
 #task 1E
 def rivers_by_station_number(stations, N):
     river_list=[]
     dict_of_stations_river=stations_by_river(stations)
-    
+  
     for station in stations:
         river=station.river
         if  river in dict_of_stations_river:
