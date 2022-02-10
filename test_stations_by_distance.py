@@ -13,7 +13,7 @@ def test_stations_by_distance():
     river = "River X"
     town = "My Town"
     s = MonitoringStation(s_id, m_id, label, coord, trange, river, town)
-
+    s_list=list(s)
     cambridge = (52.2053, 0.1218) # (lat, lon)
-    temp=stations_by_distance(s, cambridge)
+    temp=stations_by_distance(s_list, cambridge)
     assert round(temp,4)==6038
