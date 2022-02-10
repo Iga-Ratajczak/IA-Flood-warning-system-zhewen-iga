@@ -15,4 +15,4 @@ def test_stations_by_river():
     s_list.append(s)
     x=stations_by_river(s_list)
 
-    assert x[river]==label
+    assert x[river]==[label]
