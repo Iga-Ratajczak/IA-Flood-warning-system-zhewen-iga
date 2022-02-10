@@ -60,7 +60,7 @@ def test_stations_by_river():
 
     #checks that it calls all stations, checks the order of sorting
     y=rivers_by_station_number(stations,5)
-    
+    print(stations[1])
 
     assert x==[('River X2', 2), ('River X', 2)]
     assert y==[('River X2', 2), ('River X', 2), ('River Y', 1)]

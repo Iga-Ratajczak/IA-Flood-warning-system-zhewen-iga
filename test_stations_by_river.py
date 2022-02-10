@@ -11,6 +11,8 @@ def test_stations_by_river():
     river = "River X"
     town = "My Town"
     s = MonitoringStation(s_id, m_id, label, coord, trange, river, town)
-    x=stations_by_river(s)
+    s_list=[]
+    s_list.append(s)
+    x=stations_by_river(s_list)
 
     assert x[river]==label
