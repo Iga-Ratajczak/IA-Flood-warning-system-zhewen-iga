@@ -52,7 +52,12 @@ def test_stations_by_river():
     river = "River Y"
     town = "My Town"
     s5= MonitoringStation(s_id, m_id, label, coord, trange, river, town)
-    stations=[s,s2,s3,s4,s5]
+    stations=[]
+    stations.append(s)
+    stations.append(s2)
+    stations.append(s3)
+    stations.append(s4)
+    stations.append(s5)
     
 
     #for more than one station with the same river
