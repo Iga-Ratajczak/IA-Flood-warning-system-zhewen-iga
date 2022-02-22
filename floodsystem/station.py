@@ -55,4 +55,5 @@ def inconsistent_typical_range_stations(stations):
         if station.typical_range_consistent() != True:
             list_of_inconsistent.append(station.name)
     list_of_inconsistent = sorted_by_key(list_of_inconsistent, 0)
+    return list_of_inconsistent
 
