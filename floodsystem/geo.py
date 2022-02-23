@@ -5,7 +5,7 @@
 geographical data.
 
 """
-from math import dist
+# from math import dist
 from os import stat
 from .utils import sorted_by_key  # noqa
 from .station import MonitoringStation
