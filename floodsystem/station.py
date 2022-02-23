@@ -6,7 +6,6 @@ for manipulating/modifying station data
 
 """
 from .utils import sorted_by_key 
-from .stationdata import update_water_levels
 class MonitoringStation:
     """This class represents a river level monitoring station"""
 
@@ -50,12 +49,12 @@ class MonitoringStation:
         else:
             return None
     
-    def relative_water_level(self):
-        if self.latest_level == None:
-            score = None
-        else:
-            score = (self.latest_level - self.typical_range[0])/(self.typical_range[1] - self.typical_range[0])
-        return score
+    def relative_water_level(self): 
+        if self.typical_range_consistent() == True and self.latest_level != None:
+            return (self.latest_level-self.typical_range[0])/(self.typical_range[1]-self.typical_range[0])
+        else: 
+            return None
+
 
     
 
