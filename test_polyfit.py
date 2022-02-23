@@ -17,11 +17,15 @@ def test_polyfit():
 
     # Convert coefficient into a polynomial that can be evaluated
     # e.g. poly(0.3)
+    
     poly = np.poly1d(p_coeff)
     offset=x_converted[0]
 
     poly_tested,offset_tested=polyfit(dates,y,4)
     #checks that it givesthe warning and sets an offset
     #makes sure that the right type is returned
-    assert poly==poly_tested
+    #print(poly)
+    #print(poly_tested)
+    #assert round(poly)==round(poly_tested)
     assert offset==offset_tested
+    assert poly==poly_tested
