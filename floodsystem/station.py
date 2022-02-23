@@ -6,7 +6,7 @@ for manipulating/modifying station data
 
 """
 from .utils import sorted_by_key 
-from .stationdata import update_water_levels
+
 class MonitoringStation:
     """This class represents a river level monitoring station"""
 

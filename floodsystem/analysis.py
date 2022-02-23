@@ -9,7 +9,7 @@ warnings.filterwarnings("error")
 
 def polyfit(dates, levels, p):
     """Given the water level time history (dates, levels) for a station the function computes a least-squares fit of a polynomial of degree p to water level data. 
-    It return a tuple of (i) the polynomial object and (ii) any shift of the time (date)"""
+    It returns a tuple of (i) the polynomial object and (ii) any shift of the time (date)"""
     
     try:
 
@@ -37,8 +37,9 @@ def polyfit(dates, levels, p):
         #converting dates to floats
         offset=0
     except np.RankWarning:
-        print("here")
+        
         x = mdates.date2num(dates)
+        print("here")
         y = levels
 
         # Find coefficients of best-fit polynomial f(x) of degree p with offset x[0]

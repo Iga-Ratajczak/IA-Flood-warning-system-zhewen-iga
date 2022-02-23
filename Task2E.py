@@ -1,3 +1,4 @@
+import matplotlib.dates as mdates
 import datetime
 import numpy as np
 from floodsystem.stationdata import build_station_list
@@ -25,12 +26,15 @@ def run():
             #   plot_water_level_with_fit(station,dates,levels,4)
             #else:
                 #pass
-
+    #t = [(2016, 12, 30), (2016, 12, 31), (2017, 1, 1),(2017, 1, 2), (2017, 1, 3), (2017, 1, 4),(2017, 1, 5)]
+    #x = mdates.date2num(t)
+    #print(x)
     for station in stations:
         dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
+        print(dates)
         plot_water_levels(station,dates,levels)
 
-
+    
 
 
 if __name__ == "__main__":
