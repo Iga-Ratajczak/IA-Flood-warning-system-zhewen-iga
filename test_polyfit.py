@@ -27,5 +27,7 @@ def test_polyfit():
     #print(poly)
     #print(poly_tested)
     #assert round(poly)==round(poly_tested)
+    
     assert offset==offset_tested
     assert poly==poly_tested
+    return offset_tested
