@@ -27,9 +27,11 @@ def test_polyfit():
     #checks that it givesthe warning and sets an offset
     #makes sure that the right type is returned
     print(poly)
-    print(poly_tested)
+    print("from polyfit", poly_tested)
+    print(offset)
+    print("from poly", offset_tested)
     #assert round(poly)==round(poly_tested)
     
     assert offset==offset_tested
     assert poly==poly_tested
-    return offset_tested
+    #return offset_tested

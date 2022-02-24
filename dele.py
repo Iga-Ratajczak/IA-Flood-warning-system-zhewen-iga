@@ -24,6 +24,7 @@ def run():
     #makes sure that the right type is returned
     print(poly)
     print(poly_tested)
+    print(offset)
     print(offset_tested)
     assert poly==poly_tested
     assert offset==offset_tested
