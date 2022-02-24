@@ -22,7 +22,7 @@ def stations_highest_rel_level(stations, N):
         sorted_by_key(selected, 1, reverse=True)
    
 
-    return selected[0: N-1]
+    return selected[0: N]
 
 
     
