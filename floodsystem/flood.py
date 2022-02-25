@@ -8,8 +8,7 @@ def stations_level_over_threshold(stations, tol):
         if station.relative_water_level() != None: 
             if station.relative_water_level() > tol:
                 selected.append(tuple((station.name, station.relative_water_level())))
-                sorted_by_key(selected, 1)
-
+        selected.sort(key=lambda y: y[1], reverse=False)
 
     return selected
 
@@ -19,8 +18,7 @@ def stations_highest_rel_level(stations, N):
     for station in stations:
         if station.relative_water_level() != None: 
             selected.append(tuple((station.name, station.relative_water_level())))
-        sorted_by_key(selected, 1, reverse=True)
-   
+        selected.sort(key=lambda y: y[1], reverse=True)
 
     return selected[0: N]
 
