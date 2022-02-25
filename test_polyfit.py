@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import datetime 
 import numpy as np
 from dateutil.tz import tzutc
+import warnings
+warnings.filterwarnings("error")
 
 def test_polyfit():
     y = [0.1, 0.09, 0.23, 0.34, -0.05]
@@ -24,8 +26,12 @@ def test_polyfit():
     poly_tested,offset_tested=polyfit(dates,y,4)
     #checks that it givesthe warning and sets an offset
     #makes sure that the right type is returned
-    #print(poly)
-    #print(poly_tested)
+    print(poly)
+    print("from polyfit", poly_tested)
+    print(offset)
+    print("from poly", offset_tested)
     #assert round(poly)==round(poly_tested)
+    
     assert offset==offset_tested
     assert poly==poly_tested
+    #return offset_tested
