@@ -3,8 +3,8 @@ import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import numpy as np
 #To handle warnings as errors simply use this:
-import warnings
-warnings.filterwarnings("error")
+#import warnings
+#warnings.filterwarnings("error")
 
 
 def polyfit(dates, levels, p):
@@ -14,7 +14,8 @@ def polyfit(dates, levels, p):
     try:
 
         # Create set of 10 data points on interval (0, 2)
-        
+        print('here')
+        print(dates)
         x = mdates.date2num(dates)
         y = levels
 
@@ -37,9 +38,9 @@ def polyfit(dates, levels, p):
         #converting dates to floats
         offset=0
     except np.RankWarning:
-        
+
         x = mdates.date2num(dates)
-        print("here")
+        #print("here")
         y = levels
 
         # Find coefficients of best-fit polynomial f(x) of degree p with offset x[0]
