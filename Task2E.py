@@ -22,7 +22,7 @@ def run():
 
     list_of_tuples=[]
     list_of_tuples=stations_level_over_threshold(stations, 0.0)
-    print(list_of_tuples)
+    #print(list_of_tuples)
     names=[]
     for i in range(5):
         names.append(list_of_tuples[i][0])

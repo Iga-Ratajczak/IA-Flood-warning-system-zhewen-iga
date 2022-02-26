@@ -15,7 +15,8 @@ def polyfit(dates, levels, p):
     try:
 
         # Create set of 10 data points on interval (0, 2)
-        
+        print('here')
+        print(dates)
         x = mdates.date2num(dates)
         y = levels
 
@@ -38,9 +39,9 @@ def polyfit(dates, levels, p):
         #converting dates to floats
         offset=0
     except np.RankWarning:
-        
+
         x = mdates.date2num(dates)
-        print("here")
+        #print("here")
         y = levels
 
         # Find coefficients of best-fit polynomial f(x) of degree p with offset x[0]
@@ -84,7 +85,9 @@ def flood_risk(station, dates, levels, p):
             risk += 1
         if risk >= 5:
             return "Extremely Severe"
-        elif 5 > risk >= 3:
+        elif risk == 4:
+            return "Severe"
+        elif risk == 3:
             return "High"
         elif risk == 2:
             return "Moderate"
