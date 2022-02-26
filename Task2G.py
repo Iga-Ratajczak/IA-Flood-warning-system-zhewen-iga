@@ -1,6 +1,6 @@
 from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.stationdata import build_station_list, update_water_levels
-from floodsystem.analysis import floodrisk
+from floodsystem.analysis import flood_risk
 import datetime
 
 
@@ -17,7 +17,7 @@ def run():
         count += 1
         try:
             dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=1))
-            risk = floodrisk(station, dates, levels, 4)
+            risk = flood_risk(station, dates, levels, 4)
         except:
             risk = "Low"
         if risk == "Extremely Severe":
