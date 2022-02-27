@@ -15,8 +15,8 @@ def polyfit(dates, levels, p):
     try:
 
         # Create set of 10 data points on interval (0, 2)
-        print('here')
-        print(dates)
+        #print('here')
+        #print(dates)
         x = mdates.date2num(dates)
         y = levels
 
