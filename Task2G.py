@@ -30,10 +30,13 @@ def run():
             moderate.append(station.name)
         elif risk == "Low":
             low.append(station.name)
-        print(count, risk)
         if count>200:
             break
+
     print(extremely_severe)
     print(severe)
     print(high)
     print(moderate)
+    print(low)
+
+run()
