@@ -34,13 +34,14 @@ def run():
 
         for station in stations:
             if station.name==names[i]:
-                #data error
-                if station.name=='Letcombe Bassett':
-                    skip
-                else:
+                dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
 
-                    dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
-                    #print(dates)
+                #data error
+                #to overcome the issue of letcome basset - no data provided recently 
+                if dates==[] or levels==[]:
+                   pass
+                
+                else:
                     plot_water_level_with_fit(station,dates,levels,4)
             else:
                 pass
