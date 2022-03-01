@@ -27,3 +27,4 @@ risk_predicted="High"
 risk_assessed=flood_risk(s,dates,levels,4)
 print(risk_assessed)
 assert risk_assessed==risk_predicted
+assert type(risk_assessed)== str

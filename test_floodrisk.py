@@ -30,7 +30,7 @@ def test_floodrisk():
 
     risk_assessed=flood_risk(s,dates,levels,4)
     print(risk_assessed)
-    assert type(risk_assessed)==string
+    assert type(risk_assessed)== str
     #assert risk_assessed==risk_predicted
 
     #grad = (poly(x1[49])-offset)-(poly(x1[0])-offset)
