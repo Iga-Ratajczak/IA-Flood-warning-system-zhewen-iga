@@ -71,17 +71,27 @@ def flood_risk(station, dates, levels, p):
     poly, offset = polyfit(dates, levels, p)
     x = mdates.date2num(dates)
     x1 = np.linspace(x[0], x[-1], 100)
-    grad = (poly(x1[49])-offset)-(poly(x1[0])-offset)
+    #grad = (poly(x1[49])-offset)-(poly(x1[0])-offset)
+    
+    #possible alternative
+    grad=(poly(x1[-1])-poly(x1[0]))/(x1[-1]-x1[0])
+
     if grad > 1.2:
-            risk += 3
+           risk += 3
     elif grad > 0.6:
-            risk += 2
-    if station.relative_water_level() > 2:
+           risk += 2
+    #if station.relative_water_level() > 2:
+    #print(station.relative_water_level())
+    if station.relative_water_level() > 1:
             risk += 4
-    elif station.relative_water_level() > 1.5:
+    #elif station.relative_water_level() > 1.5:
+    elif station.relative_water_level() > 0.9:
             risk += 3
-    elif station.relative_water_level() > 1:
+    #elif station.relative_water_level() > 1:
+    elif station.relative_water_level() > 0.6:
             risk += 2
+    elif station.relative_water_level() > 0.3:
+            risk += 1
     if risk >= 5:
             return "Extremely Severe"
     elif risk == 4:
