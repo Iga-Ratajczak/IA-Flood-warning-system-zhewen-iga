@@ -30,8 +30,12 @@ def run():
 
         for station in stations:
             if station.name==names[i]:
-               dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
-               plot_water_levels(station,dates,levels)
+                dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
+                #to overcome the issue of letcome basset - no data provided recently 
+                if dates==[] or levels==[]:
+                   pass
+                else:
+                    plot_water_levels(station,dates,levels)
             else:
                 pass
     #t = [(2016, 12, 30), (2016, 12, 31), (2017, 1, 1),(2017, 1, 2), (2017, 1, 3), (2017, 1, 4),(2017, 1, 5)]
