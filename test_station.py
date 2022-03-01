@@ -4,9 +4,11 @@
 """Unit test for the station module"""
 
 from xmlrpc.client import Boolean
+
+from attr import s
 from floodsystem.station import MonitoringStation
-#from floodsystem.station import inconsistent_typical_range_stations
-from floodsystem.stationdata import build_station_list
+from floodsystem.station import inconsistent_typical_range_stations
+
 
 def test_create_monitoring_station():
 
@@ -27,9 +29,9 @@ def test_create_monitoring_station():
     assert s.typical_range == trange
     assert s.river == river
     assert s.town == town
-    #assert type(s.typical_range_consistent) == Boolean
+    assert type(s.typical_range_consistent) == Boolean
 
-#def test_inconsistent_typical_range_stations():
+def test_inconsistent_typical_range_stations():
     #stations = build_station_list()
-    #for station in stations:
-        #assert type(inconsistent_typical_range_stations(stations)) == list
+    for station in s:
+        assert type(inconsistent_typical_range_stations(s)) == list
