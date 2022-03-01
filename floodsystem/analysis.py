@@ -75,6 +75,7 @@ def flood_risk(station, dates, levels, p):
     
     #possible alternative
     grad=(poly(x1[-1])-poly(x1[0]))/(x1[-1]-x1[0])
+
     if grad > 1.2:
            risk += 3
     elif grad > 0.6:
